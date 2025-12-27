@@ -8,11 +8,15 @@ zi_cmd() {
 zi_cmd aristocratos/btop btop
 zi_cmd ClementTsang/bottom btm
 zi_cmd muesli/duf duf
+# ncdu: 使用系统包管理器安装: sudo apt install ncdu
+# glances: 使用 pip 安装: pip install glances
+# htop: 使用系统包管理器安装: sudo apt install htop
 
 # Git / 开发
 zi_cmd jesseduffield/lazygit lazygit
 zi_cmd dandavison/delta delta
 zi_cmd cli/cli gh
+# gitui: 使用 cargo 安装: cargo install gitui 或从源码编译
 
 # 文本处理
 zi_cmd jqlang/jq jq
@@ -26,12 +30,18 @@ zi_cmd theryangeary/choose choose
 zi_cmd ducaale/xh xh
 # dog: 没有 arm64 版本，使用系统包管理器安装: sudo apt install dog
 # zi_cmd ogham/dog dog
+# httpie: 使用 pip 安装: pip install httpie
 
 # 文件工具
 zi_cmd sharkdp/bat bat
-zi_cmd BurntSushi/ripgrep rg
+zi_cmd sharkdp/fd fd
+# ripgrep 需要特殊处理，因为文件在子目录中
+zinit ice as"command" from"gh-r" mv"ripgrep-*/rg -> rg" pick"rg" sbin"rg"
+zinit light BurntSushi/ripgrep
 zi_cmd ajeetdsouza/zoxide zoxide
-zi_cmd sxyazi/yazi yazi
+# yazi 使用 musl 版本（静态链接，不依赖系统 GLIBC）
+zinit ice as"command" from"gh-r" bpick"*linux-musl.zip" mv"yazi-*/yazi -> yazi"
+zinit light sxyazi/yazi
 
 # fzf（需要特殊处理：二进制 + 补全 + 键绑定）
 zinit ice from"gh-r" as"command" bpick"*linux_arm64.tar.gz"
@@ -46,6 +56,11 @@ zi_cmd eza-community/eza eza
 zi_cmd bootandy/dust dust
 zi_cmd dalance/procs procs
 zi_cmd zellij-org/zellij zellij
+# tig: 使用系统包管理器安装: sudo apt install tig 或从源码编译
+# superfile: 使用官方安装脚本: bash -c "$(curl -sLo- https://superfile.netlify.app/install.sh)"
+# 或者使用 x-cmd: x install superfile
+# mdcat: 使用 cargo 安装: cargo install mdcat
+# aws: 使用官方安装脚本: curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip"
 
 # atuin（单独处理，必须）
 zinit ice \
