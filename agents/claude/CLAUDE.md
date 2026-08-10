@@ -29,6 +29,7 @@
 - 永不 force push 到 main/master 分支
 - 永不执行 `rm -rf .*` 或类似破坏性命令
 - 永不修改 .env 文件（如必须修改，明确告知用户）
+- macOS APFS 默认大小写不敏感：`~/dotfiles` 与 `~/Dotfiles` 是同一目录。删除任何路径前必须先 `stat` 确认目标 inode 唯一，删除目录类优先移入 `/tmp` 观察后再清除
 
 ### 质量红线
 - 代码未经测试不得声明完成
