@@ -1,0 +1,29 @@
+{
+  "enabledPlugins": {
+    "competitive-ads-extractor@awesome-claude-skills": true,
+    "content-research-writer@awesome-claude-skills": true,
+    "document-skills@anthropic-agent-skills": true,
+    "domain-name-brainstormer@awesome-claude-skills": true,
+    "example-skills@anthropic-agent-skills": true,
+    "file-organizer@awesome-claude-skills": true,
+    "frontend-design@claude-plugins-official": true,
+    "glm-plan-bug@zai-coding-plugins": true,
+    "glm-plan-usage@zai-coding-plugins": true,
+    "image-enhancer@awesome-claude-skills": true,
+    "imagen@ai-skills": true,
+    "invoice-organizer@awesome-claude-skills": true,
+    "kaizen@context-engineering-kit": true,
+    "lead-research-assistant@awesome-claude-skills": true,
+    "meeting-insights-analyzer@awesome-claude-skills": true,
+    "postgres@ai-skills": true,
+    "raffle-winner-picker@awesome-claude-skills": true,
+    "skill-creator@awesome-claude-skills": true
+  },
+  "env": {
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "ANTHROPIC_BASE_URL": "https://open.bigmodel.cn/api/anthropic",
+    "API_TIMEOUT_MS": "3000000"
+  },
+  "theme": "light-daltonized",
+  "model": "opus"
+}
