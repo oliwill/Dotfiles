@@ -1,0 +1,85 @@
+# Codex 配置（Windows 变体）
+# 双下划线占位符由 agents/apply.sh 用 ~/.config/dotfiles/secrets.env 渲染，真实密钥永不入库
+# 机器特定的运行时状态（hooks.state / node_repl / marketplaces / projects）不同步
+
+model_provider = "custom"
+model = "deepseek-v4-flash"
+disable_response_storage = true
+model_catalog_json = "cc-switch-model-catalog.json"
+notify = [ "C:/Users/Lzw/.bun/bin/bun.exe", "C:/Users/Lzw/.confirmo/hooks/confirmo-codex-hook.js" ]
+model_reasoning_effort = "medium"
+personality = "pragmatic"
+
+[model_providers]
+
+[plugins]
+[model_providers.custom]
+name = "custom"
+wire_api = "responses"
+requires_openai_auth = true
+base_url = "http://127.0.0.1:15721/v1"
+experimental_bearer_token = "__PROXY_BEARER_TOKEN__"
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."cloudflare@openai-curated"]
+enabled = true
+
+[mcp_servers]
+[mcp_servers.utools]
+type = "http"
+url = "http://127.0.0.1:3501/mcp"
+
+[mcp_servers.utools.headers]
+x-mcp-key = "__UTOOLS_MCP_KEY__"
+
+[mcp_servers.utools.http_headers]
+x-mcp-key = "__UTOOLS_MCP_KEY__"
+
+[mcp_servers.web-reader]
+type = "http"
+url = "https://open.bigmodel.cn/api/mcp/web_reader/mcp"
+
+[mcp_servers.web-reader.headers]
+Authorization = "Bearer __GLM_API_KEY__"
+
+[mcp_servers.web-reader.http_headers]
+Authorization = "Bearer __GLM_API_KEY__"
+
+[mcp_servers.web-search-prime]
+type = "http"
+url = "https://open.bigmodel.cn/api/mcp/web_search_prime/mcp"
+
+[mcp_servers.web-search-prime.headers]
+Authorization = "Bearer __GLM_API_KEY__"
+
+[mcp_servers.web-search-prime.http_headers]
+Authorization = "Bearer __GLM_API_KEY__"
+
+[mcp_servers.zai-mcp-server]
+type = "stdio"
+command = "cmd"
+args = [ "/c", "npx", "-y", "zai-mcp-server-package" ]
+
+[mcp_servers.zread]
+type = "http"
+url = "https://open.bigmodel.cn/api/mcp/zread/mcp"
+
+[mcp_servers.zread.headers]
+Authorization = "Bearer __GLM_API_KEY__"
+
+[mcp_servers.zread.http_headers]
+Authorization = "Bearer __GLM_API_KEY__"
+
+[features]
+js_repl = false
+
+[windows]
+sandbox = "elevated"

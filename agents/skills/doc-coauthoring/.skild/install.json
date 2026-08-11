@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "name": "doc-coauthoring",
+  "platform": "claude",
+  "scope": "global",
+  "source": "anthropics/skills/skills/doc-coauthoring",
+  "sourceType": "degit-shorthand",
+  "installedAt": "2026-02-02T01:30:55.830Z",
+  "contentHash": "08286b50480ba68dc6f85a9fc635ab8761af7b78588a117d9f08735c35fbf82f",
+  "hasSkillMd": true,
+  "skill": {
+    "frontmatter": {
+      "name": "doc-coauthoring",
+      "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks."
+    },
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "frontmatter": {
+        "name": "doc-coauthoring",
+        "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks."
+      }
+    }
+  }
+}

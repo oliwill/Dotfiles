@@ -1,0 +1,23 @@
+{
+  "skill_name": "feishu-doc-bridge",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我总结这个飞书文档：https://my.feishu.cn/wiki/MX8CwQj6wiTT12k5J70cWRtWnBJ",
+      "expected_output": "Skill 应该检测到飞书链接，读取文档内容（电子表格），并将内容注入到对话中。然后告诉用户已读取文档，包含文档标题和类型。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "这个文档里的数据是什么意思？https://xxx.feishu.cn/docx/abc123",
+      "expected_output": "Skill 应该检测到飞书链接，尝试读取文档内容。即使读取失败（因为链接无效或没有权限），也应该告诉用户需要先完成 OAuth 授权。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "提取这个飞书表格中的关键信息：https://syounggroup.feishu.cn/wiki/Xmf2wXwcWiHX2JkdLGMcjNA7n90",
+      "expected_output": "Skill 应该检测到飞书 Wiki 链接，询问用户 Wiki space_id（如果没有配置），然后读取表格内容并转换为 Markdown 格式注入到对话中。",
+      "files": []
+    }
+  ]
+}

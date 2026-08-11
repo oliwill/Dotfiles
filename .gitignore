@@ -31,3 +31,5 @@ config/sway/*
 # 环境变量文件
 plugins/avante/.env
 config/nvim/.nvimlog
+# 密钥文件
+agents/secrets.env

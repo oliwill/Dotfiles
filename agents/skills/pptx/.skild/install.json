@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "name": "pptx",
+  "platform": "claude",
+  "scope": "global",
+  "source": "anthropics/skills/skills/pptx",
+  "sourceType": "degit-shorthand",
+  "installedAt": "2026-02-02T01:31:45.708Z",
+  "contentHash": "3f246631f369224f4f007c9a6f905932433a52da1c2f633d3606836095501829",
+  "hasSkillMd": true,
+  "skill": {
+    "frontmatter": {
+      "name": "pptx",
+      "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks",
+      "license": "Proprietary. LICENSE.txt has complete terms"
+    },
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "frontmatter": {
+        "name": "pptx",
+        "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks",
+        "license": "Proprietary. LICENSE.txt has complete terms"
+      }
+    }
+  }
+}

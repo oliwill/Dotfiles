@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "name": "brand-guidelines",
+  "platform": "claude",
+  "scope": "global",
+  "source": "anthropics/skills/skills/brand-guidelines",
+  "sourceType": "degit-shorthand",
+  "installedAt": "2026-02-02T01:30:56.405Z",
+  "contentHash": "abb30618bd6c3fb5cf445cb9188e5288139e78f0215bd1c696dda85c4bf059c3",
+  "hasSkillMd": true,
+  "skill": {
+    "frontmatter": {
+      "name": "brand-guidelines",
+      "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+      "license": "Complete terms in LICENSE.txt"
+    },
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "frontmatter": {
+        "name": "brand-guidelines",
+        "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+        "license": "Complete terms in LICENSE.txt"
+      }
+    }
+  }
+}

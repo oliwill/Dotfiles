@@ -1,0 +1,96 @@
+{
+  "enabledPlugins": {
+    "glm-plan-bug@zai-coding-plugins": true,
+    "glm-plan-usage@zai-coding-plugins": true
+  },
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "PROXY_MANAGED",
+    "ANTHROPIC_BASE_URL": "http://127.0.0.1:15721",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL": "claude-fable-5",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL_NAME": "deepseek-v4-pro",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-4-5",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME": "deepseek-v4-pro",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-8",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL_NAME": "deepseek-v4-pro",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL_NAME": "deepseek-v4-pro",
+    "API_TIMEOUT_MS": "3000000",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "deepseek-v4-pro"
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "C:/Users/Lzw/.bun/bin/bun.exe \"C:/Users/Lzw/.confirmo/hooks/confirmo-hook.js\"",
+            "timeout": 5,
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "C:/Users/Lzw/.bun/bin/bun.exe \"C:/Users/Lzw/.confirmo/hooks/confirmo-hook.js\"",
+            "timeout": 5,
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "command": "C:/Users/Lzw/.bun/bin/bun.exe \"C:/Users/Lzw/.confirmo/hooks/confirmo-hook.js\"",
+            "timeout": 5,
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "C:/Users/Lzw/.bun/bin/bun.exe \"C:/Users/Lzw/.confirmo/hooks/confirmo-hook.js\"",
+            "timeout": 5,
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "command": "C:/Users/Lzw/.bun/bin/bun.exe \"C:/Users/Lzw/.confirmo/hooks/confirmo-hook.js\"",
+            "timeout": 5,
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "command": "C:/Users/Lzw/.bun/bin/bun.exe \"C:/Users/Lzw/.confirmo/hooks/confirmo-hook.js\"",
+            "timeout": 5,
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ]
+  },
+  "model": "opus[1m]"
+}

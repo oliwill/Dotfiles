@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "name": "docx",
+  "platform": "claude",
+  "scope": "global",
+  "source": "anthropics/skills/skills/docx",
+  "sourceType": "degit-shorthand",
+  "installedAt": "2026-02-02T01:30:55.496Z",
+  "contentHash": "6025f2eedf9e4221cce3639b8bd4973fdcf9d53c320ede67c86037175a98fd3e",
+  "hasSkillMd": true,
+  "skill": {
+    "frontmatter": {
+      "name": "docx",
+      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying or editing content, (3) Working with tracked changes, (4) Adding comments, or any other document tasks",
+      "license": "Proprietary. LICENSE.txt has complete terms"
+    },
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "frontmatter": {
+        "name": "docx",
+        "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying or editing content, (3) Working with tracked changes, (4) Adding comments, or any other document tasks",
+        "license": "Proprietary. LICENSE.txt has complete terms"
+      }
+    }
+  }
+}
