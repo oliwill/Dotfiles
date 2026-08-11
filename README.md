@@ -28,6 +28,10 @@ bash init.sh
 
 ## ✨ 核心特性
 
+### 🤖 AI Agent 配置同步 (agents/)
+
+跨设备同步 Claude Code / Pi / Codex / OMP 的配置与 300+ Skills，密钥占位符化（1Password 管理），打开终端自动从远端对齐。详见 **[agents/README.md](agents/README.md)**。
+
 ### 🐚 Shell 环境 (Zsh)
 
 - **插件管理器**: [Zinit](https://github.com/zdharma-continuum/zinit) - 极速加载，延迟加载机制。
@@ -86,6 +90,7 @@ bash init.sh
 │   ├── system/         # 系统维护 (backup, disk usage)
 │   └── utils/          # 通用工具 (extract, url_encode)
 ├── dotlink/            # 自研的软链接管理工具
+├── agents/             # AI Agent 配置同步层（Claude/Pi/Codex/OMP，见 agents/README.md）
 └── tools/              # 随处可用的便携脚本
 ```
 

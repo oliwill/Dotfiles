@@ -22,6 +22,12 @@
 - Prefers to learn through Twitter threads and GitHub repos
 - Actively maintains memory system for cross-session continuity
 
+## 多设备环境（跨项目事实）
+
+- 三台设备：Windows 11 主力机 + MacBook Air（办公室）+ MacBook Pro（家里），配置通过私有仓库 `~/Dotfiles`（github.com/oliwill/Dotfiles）同步
+- Agent 配置（skills、settings、toml）的唯一事实来源是 `~/Dotfiles/agents/`；密钥不入库，由各机 `~/.config/dotfiles/secrets.env` 渲染（1Password 管理）
+- 修改 agent 配置后须运行 `bash ~/Dotfiles/agents/push.sh` 回收并推送；打开终端会自动 `sync.sh` 对齐远端
+
 ## 🔒 不可变规则（违反即拒绝执行）
 
 ### 安全红线
