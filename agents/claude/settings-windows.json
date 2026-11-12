@@ -4,19 +4,23 @@
     "glm-plan-usage@zai-coding-plugins": true
   },
   "env": {
-    "ANTHROPIC_AUTH_TOKEN": "PROXY_MANAGED",
-    "ANTHROPIC_BASE_URL": "http://127.0.0.1:15721",
-    "ANTHROPIC_DEFAULT_FABLE_MODEL": "claude-fable-5",
-    "ANTHROPIC_DEFAULT_FABLE_MODEL_NAME": "deepseek-v4-pro",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-4-5",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME": "deepseek-v4-pro",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-8",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL_NAME": "deepseek-v4-pro",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL_NAME": "deepseek-v4-pro",
+    "ANTHROPIC_AUTH_TOKEN": "magpie",
+    "ANTHROPIC_BASE_URL": "http://127.0.0.1:3425",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL": "group/plan-writing",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL_NAME": "长文与写作 · Kimi优先",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "group/plan-fast",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME": "快速整理 · GLM Flash",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "group/plan-writing",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL_NAME": "长文与写作 · Kimi优先",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "group/plan-research",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL_NAME": "研究与日常 · GLM优先",
     "API_TIMEOUT_MS": "3000000",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
-    "CLAUDE_CODE_SUBAGENT_MODEL": "deepseek-v4-pro"
+    "CLAUDE_CODE_SUBAGENT_MODEL": "group/plan-research",
+    "ANTHROPIC_SMALL_FAST_MODEL": "group/plan-fast",
+    "CLAUDE_CODE_EFFORT_LEVEL": "high",
+    "CLAUDE_CODE_MAX_CONTEXT_TOKENS": "256000",
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "256000"
   },
   "hooks": {
     "PostToolUse": [
@@ -92,5 +96,5 @@
       }
     ]
   },
-  "model": "opus[1m]"
+  "model": "opus"
 }
