@@ -55,3 +55,20 @@ GLM Lite 的 MCP 有独立月额度，本机读数为 100 次/月；不要把可
 - [Kimi 模型、思考模式与套餐条件](https://www.kimi.com/code/docs/en/kimi-code/models)
 - [GLM Coding Plan 接口](https://usemagpie.ai/docs/glm)
 - [智谱联网搜索 MCP](https://docs.bigmodel.cn/cn/coding-plan/mcp/search-mcp-server)
+
+## input / Ciii 余额渠道
+
+2026-11-12 在 Windows 本机核查并清理了失效入口，原有套餐分工与 Codex GPT Pro 设置保持不变。
+
+- `input`：将能查询钱包余额的密钥提升为主密钥；无有效订阅的旧密钥保留在 `keys[]`，设置 `off: true`。模型目录更新为该钱包入口返回的 9 个 Claude 型号。
+- `ciii-codex`：保留有效钱包主密钥；将所属分组已删除的备用密钥设置为 `off: true`。模型目录按接口查询结果更新为 10 个型号，新增 `gpt-6`，移除旧目录中的 `gpt-5.6-luna`。
+- 独立的 `ai-input` 密钥返回 `INVALID_API_KEY`，该提供商设置 `off: true`，保留配置供后续更换凭证。
+- 保留原有服务地址与协议设置。两个余额渠道不加入 GLM/Kimi 套餐的自动备用组。
+
+配置通过原子替换 `providers.json` 热重载，无需重启。实测网关目录显示 input 9 个、Ciii 10 个、旧 ai-input 0 个；两次转发的候选密钥均只有有效钱包密钥，未再尝试失效密钥。
+
+截至当日 18:47，服务尚未恢复：input 的直连与网关请求均出现 `Upstream authentication failed`；Ciii 均出现 HTTP 502，网关记录为 Cloudflare 收到源站无效或不完整响应。余额与模型查询成功不能证明生成请求成功；本次没有将这两家设为工作默认模型。商家需先恢复上游认证或源站服务，若商家要求更新客户端密钥或地址，再单独更换对应入口。
+
+本次恢复点：`C:\Users\Lzw\Documents\Magpie配置备份\20261112-184127-input-ciii`。密钥及原始备份只留在本机，不加入此仓库；其他设备需使用各自凭证复现上述启停设置。
+
+字段依据：[Magpie 0.1.3859 密钥配置](https://github.com/yetone/magpie/blob/v0.1.3859/internal/provider/keys.go)、[配置监听](https://github.com/yetone/magpie/blob/v0.1.3859/internal/gateway/gateway.go)。
