@@ -1,9 +1,10 @@
 model = "gpt-5.6-luna"
-model_provider = "ai_input"
+model_provider = "openai"
 model_reasoning_effort = "xhigh"
 disable_response_storage = true
 
 notify = ["/Users/al/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended", "--previous-notify", "[\"\\/Users\\/al\\/.bun\\/bin\\/bun\",\"\\/Users\\/al\\/.confirmo\\/hooks\\/confirmo-codex-hook.js\"]"]
+forced_login_method = "chatgpt"
 
 [desktop]
 conversationDetailMode = "STEPS_COMMANDS"
@@ -115,13 +116,6 @@ args = ["mcp"]
 cwd = "."
 enabled = false
 
-[model_providers.ai_input]
-base_url = "https://ai.input.im"
-name = "ai_input"
-requires_openai_auth = true
-wire_api = "responses"
-experimental_bearer_token = "__GLM_API_KEY__"
-
 [plugins."frontend-design@claude-plugins-official"]
 enabled = true
 
@@ -189,3 +183,16 @@ trusted_hash = "sha256:e3b3a6f40c6702952640ba9ec4924cdb1f0dbeb62158b213efeb4e15a
 
 [mcp_servers.arc]
 url = "https://uiarc.dev/api/mcp"
+
+# Legacy conversation IDs use the official ChatGPT login; no relay endpoints.
+[model_providers.ai_input]
+name = "OpenAI"
+wire_api = "responses"
+requires_openai_auth = true
+supports_websockets = true
+
+[model_providers.custom]
+name = "OpenAI"
+wire_api = "responses"
+requires_openai_auth = true
+supports_websockets = true

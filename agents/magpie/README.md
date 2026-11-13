@@ -2,6 +2,22 @@
 
 配置于 2026-11-12，Magpie 0.1.3859。此处保存不含凭证的配置方案；各机的套餐密钥与登录保留在本机。
 
+## Codex / ChatGPT：固定官方原生连接
+
+2026-11-13 已明确取消 Magpie 对 Codex / ChatGPT 的模型转发，使用官方 ChatGPT Pro 登录。GLM、Kimi、input、Ciii 等渠道继续留给其他工具。
+
+- 本机及 Windows / Mac 模板均设置 `model_provider = "openai"`、`forced_login_method = "chatgpt"`，不设置模型服务的 `openai_base_url` / `chatgpt_base_url` 覆盖。
+- 移除本机 `[model_providers.magpie]` 及其转发授权头。旧聊天用到的 `custom` / `ai_input` 标识仅保留为官方登录兼容入口：`requires_openai_auth = true`，无 `base_url`、转发令牌或自定义授权头。
+- Magpie 本机 `providers.json` 的 `id: "codex"` 设置 `off: true`，禁止其调用 ChatGPT 订阅账号；`stash.json` 保持 `"codex.disconnected": "1"`。不要为测试或切换其他工具而重新接管 Codex。
+- Windows 模板已去除旧的 `127.0.0.1:15721` 模型代理与 CC Switch 模型目录覆盖；Mac 模板已去除 input 模型地址。Windows 默认模型与本机保持 `gpt-6-astra`、`max`。
+- ChatGPT 官方登录与普通网络代理是不同层面：本次没有改动系统网络代理，也没有复制或更换官方登录凭证。
+
+验证：重启 Magpie 后，新默认入口与旧聊天兼容入口各完成一次官方 Codex 临时会话测试，均返回 `OFFICIAL_OK`；期间 Magpie 新增 Codex 转发记录为 0。两个测试均不保存聊天会话。其他提供商及套餐路由组与修改前一致。
+
+恢复点：`C:\Users\Lzw\Documents\Magpie配置备份\20261113-135237-official-only`。原始配置备份含敏感信息，仅保存在本机。同步只提交脱敏模板与本文档，不直接回收含凭证的本机完整配置。
+
+依据：[OpenAI 配置参考](https://learn.chatgpt.com/docs/config-file/config-reference)、[Magpie 0.1.3969 提供商开关](https://github.com/yetone/magpie/blob/v0.1.3969/internal/provider/provider.go)、[断开接管实现](https://github.com/yetone/magpie/blob/v0.1.3969/internal/agent/applied.go)。
+
 ## 分工
 
 | 路由 ID | 用途 | 首选 | 备用 |
@@ -14,7 +30,7 @@
 
 ## 客户端
 
-- Codex：继续使用原有 GPT Pro，模型及推理配置不改。
+- Codex / ChatGPT：使用官方原生连接与 ChatGPT Pro 登录，不经过 Magpie 或其他模型中转。
 - Claude Code：默认使用写作组；Opus 对应写作组，Sonnet 对应研究组，Haiku 对应快速组，子代理使用研究组。
 - DeepSeek Harness：研究组，保留原有压缩设置。
 - OpenCode：Build 使用研究组，Plan 使用写作组，小模型使用快速组；保留既有搜索、网页读取 MCP。

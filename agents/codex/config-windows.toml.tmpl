@@ -1,25 +1,15 @@
 # Codex 配置（Windows 变体）
 # 双下划线占位符由 agents/apply.sh 用 ~/.config/dotfiles/secrets.env 渲染，真实密钥永不入库
 # 机器特定的运行时状态（hooks.state / node_repl / marketplaces / projects）不同步
-
-model_provider = "custom"
-model = "deepseek-v4-flash"
+model_provider = "openai"
+model = "gpt-6-astra"
 disable_response_storage = true
-model_catalog_json = "cc-switch-model-catalog.json"
 notify = [ "C:/Users/Lzw/.bun/bin/bun.exe", "C:/Users/Lzw/.confirmo/hooks/confirmo-codex-hook.js" ]
-model_reasoning_effort = "medium"
+model_reasoning_effort = "max"
 personality = "pragmatic"
-
-[model_providers]
+forced_login_method = "chatgpt"
 
 [plugins]
-[model_providers.custom]
-name = "custom"
-wire_api = "responses"
-requires_openai_auth = true
-base_url = "http://127.0.0.1:15721/v1"
-experimental_bearer_token = "__PROXY_BEARER_TOKEN__"
-
 [plugins."documents@openai-primary-runtime"]
 enabled = true
 
@@ -86,3 +76,10 @@ sandbox = "elevated"
 
 [mcp_servers.arc]
 url = "https://uiarc.dev/api/mcp"
+
+# Legacy conversation IDs use the official ChatGPT login; no relay endpoints.
+[model_providers.custom]
+name = "OpenAI"
+wire_api = "responses"
+requires_openai_auth = true
+supports_websockets = true
